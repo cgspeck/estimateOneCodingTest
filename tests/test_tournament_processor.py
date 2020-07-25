@@ -25,4 +25,4 @@ def test_full_tournament():
     with open(fp, "rt") as fh:
         actual_tournament = process_tournament(fh)
 
-    assert expected_tournament == actual_tournament
+    assert actual_tournament == expected_tournament

@@ -23,4 +23,4 @@ def test_tournament_report():
         'Person C stats: 17 11'
     ]
 
-    assert expected == tournament.report()
+    assert tournament.report() == expected

@@ -28,7 +28,7 @@ setup(
     platforms=["POSIX", "Windows", "MaxOS"],
     entry_points={
         'console_scripts': [
-            'scorer = scorer.main:run_cli',
+            'scorer = scorer.cli:main',
         ]
     },
     install_requires=required,

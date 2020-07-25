@@ -6,7 +6,7 @@ from .tournament_processor import process_tournament
 from .query_processor import process_queries
 
 
-def create_argparser():
+def parse_args(argv):
     parser = argparse.ArgumentParser(
         description="Estimate One tennis tournament coding challenge"
     )
@@ -17,12 +17,11 @@ def create_argparser():
         help="Queries to run against data, e.g. 'Games Player x' or 'Score Match y'",
         nargs="?"
     )
-    return parser
+    return parser.parse_args(argv)
 
 
-def run_cli():
-    parser = create_argparser()
-    args = parser.parse_args()
+def run_cli(argv):
+    args = parse_args(argv)
 
     with open(args.file_path, "rt") as fh:
         data = process_tournament(fh)
@@ -34,3 +33,7 @@ def run_cli():
         answers += process_queries(args.queries, data, blank_line=True)
 
     print("\n".join(answers))
+
+
+def main():
+    run_cli(sys.argv[1:])
