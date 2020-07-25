@@ -13,7 +13,10 @@ def create_argparser():
     parser.add_argument('file_path', type=str,
                         help="Path to tournament data")
     parser.add_argument(
-        'queries', type=str, help="Queries to run against data, e.g. 'Games Player x' or 'Score Match y'", nargs="?")
+        'queries', default=sys.stdin,
+        help="Queries to run against data, e.g. 'Games Player x' or 'Score Match y'",
+        nargs="?"
+    )
     return parser
 
 
@@ -27,6 +30,7 @@ def run_cli():
     if args.queries is None:
         answers = data.report()
     else:
-        answers = process_queries()
+        answers = [""]
+        answers += process_queries(args.queries, data)
 
     print("\n".join(answers))

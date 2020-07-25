@@ -31,10 +31,10 @@ class Tournament():
     players: typing.Dict[str, Player] = field(default_factory=dict)
 
     def score_match(self, id_: str) -> str:
-        pass
+        return self.matches[id_].report()
 
     def games_player(self, name: str) -> str:
-        pass
+        return self.players[name].report()
 
     def report(self) -> str:
         memo = [m.report() for m in self.matches.values()]
