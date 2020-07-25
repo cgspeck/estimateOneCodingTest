@@ -20,7 +20,7 @@ required_dev += required_test
 setup(
     name='EstimateOne Coding Challenge',
     author="Chris Speck",
-    version='0.0.1',
+    version='1.0.0',
     packages=['scorer'],
     license='proprietary',
     long_description=open('README.md').read(),
