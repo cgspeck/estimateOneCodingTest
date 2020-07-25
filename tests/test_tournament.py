@@ -1,17 +1,8 @@
-import os
-
 from scorer.data_objects import Match, Player, Tournament
-from scorer.tournament_processor import process_tournament
 
 
-def test_full_tournament():
-    fp = os.path.join(
-        os.path.abspath(os.path.dirname(__file__)),
-        'data',
-        'full_tournament.txt'
-    )
-
-    expected_tournament = Tournament(
+def test_tournament_report():
+    tournament = Tournament(
         matches={
             '01': Match(id_='01', player_names=['Person A', 'Person B'], player_sets=[2, 0]),
             '02': Match(id_='02', player_names=['Person A', 'Person C'], player_sets=[1, 2])
@@ -22,7 +13,14 @@ def test_full_tournament():
             'Person C': Player(name='Person C', won_games=17, lost_games=11)
         }
     )
-    with open(fp, "rt") as fh:
-        actual_tournament = process_tournament(fh)
 
-    assert expected_tournament == actual_tournament
+    expected = [
+        'Person A defeated Person B\n2 sets to 0',
+        'Person C defeated Person A\n2 sets to 1',
+        '',
+        'Person A stats: 23 17',
+        'Person B stats: 0 12',
+        'Person C stats: 17 11'
+    ]
+
+    assert expected == tournament.report()

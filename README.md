@@ -33,4 +33,6 @@ Games Player Person A
 EOF
 ```
 
+If you run this without any queries then it will print out the results and statistics for each match and player.
+
 Note: if you do not want to install developer and test dependencies, running `pip install .` will skip these.

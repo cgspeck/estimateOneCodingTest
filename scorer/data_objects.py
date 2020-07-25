@@ -35,3 +35,9 @@ class Tournament():
 
     def games_player(self, name: str) -> str:
         pass
+
+    def report(self) -> str:
+        memo = [m.report() for m in self.matches.values()]
+        memo.append("")
+        memo += [f"{player.name} stats: {player.report()}" for player in self.players.values()]
+        return memo

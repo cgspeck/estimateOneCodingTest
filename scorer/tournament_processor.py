@@ -35,7 +35,7 @@ def updatePlayerTotalGames(match: Match, games_for_set: typing.List[int], t: Tou
                 player_name, won_games_this_set, lost_games_this_set)
 
 
-def ProcessTournament(fh: typing.TextIO) -> Match:
+def process_tournament(fh: typing.TextIO) -> Match:
     tournament = Tournament()
     player_points = [0, 0]
     games_for_set = [0, 0]
