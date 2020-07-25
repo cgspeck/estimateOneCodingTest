@@ -4,7 +4,7 @@ This is my submission for the Estimate One coding challenge.
 
 ## Dependencies
 
-Python3 and Virtualenv.
+Python 3.8 and Virtualenv.
 
 ## Local Development
 
