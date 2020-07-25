@@ -9,7 +9,7 @@ VALID_QUERIES = [
 ]
 
 
-def process_queries(queries: typing.TextIO, tournament: Tournament) -> typing.List[str]:
+def process_queries(queries: typing.TextIO, tournament: Tournament, blank_line: bool = False) -> typing.List[str]:
     memo = []
 
     for query_line in queries.readlines():
@@ -28,5 +28,8 @@ def process_queries(queries: typing.TextIO, tournament: Tournament) -> typing.Li
         arg = " ".join(arg_tokens[2:])
 
         memo.append(getattr(tournament, query)(arg))
+
+        if blank_line:
+            memo.append('')
 
     return memo

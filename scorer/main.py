@@ -31,6 +31,6 @@ def run_cli():
         answers = data.report()
     else:
         answers = [""]
-        answers += process_queries(args.queries, data)
+        answers += process_queries(args.queries, data, blank_line=True)
 
     print("\n".join(answers))
