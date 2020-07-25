@@ -1,6 +1,5 @@
 import argparse
 import sys
-from pprint import pprint
 
 from .tournament_processor import process_tournament
 from .query_processor import process_queries

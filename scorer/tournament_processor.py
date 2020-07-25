@@ -1,6 +1,4 @@
 import typing
-import io
-
 from .data_objects import Match, Player, Tournament
 
 MATCH_ID_PREAMBLE = 'Match: '

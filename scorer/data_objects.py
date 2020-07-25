@@ -12,7 +12,8 @@ class Match():
         winning_player = self.player_sets[1] > self.player_sets[0]
         loosing_player = not winning_player
 
-        return f"{self.player_names[winning_player]} defeated {self.player_names[loosing_player]}\n{self.player_sets[winning_player]} sets to {self.player_sets[loosing_player]}"
+        return f"""{self.player_names[winning_player]} defeated {self.player_names[loosing_player]}
+{self.player_sets[winning_player]} sets to {self.player_sets[loosing_player]}"""
 
 
 @dataclass
