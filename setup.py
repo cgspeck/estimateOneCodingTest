@@ -22,7 +22,7 @@ setup(
     author="Chris Speck",
     version='0.0.1',
     packages=['scorer'],
-    license='GNU GPLv3',
+    license='proprietary',
     long_description=open('README.md').read(),
     url="https://github.com/cgspeck/e1-coding-challenge",
     platforms=["POSIX", "Windows", "MaxOS"],
