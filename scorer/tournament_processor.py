@@ -57,7 +57,6 @@ def ProcessTournament(fh: typing.TextIO) -> Match:
 
             match = Match()
             match.id_ = line.split(MATCH_ID_PREAMBLE)[1].strip()
-            print(f"found match {match}")
             player1_points = 0
             player2_points = 0
             player1_games_for_set = 0
@@ -66,19 +65,16 @@ def ProcessTournament(fh: typing.TextIO) -> Match:
 
         if " vs " in line:
             player_names = line.split(" vs ")
-            print(f"player_names {player_names}")
             match.player1_name = player_names[0]
             match.player2_name = player_names[1].strip()
 
         if line == "0\n":
-            print("player 1 pt")
             player1_points += 1
 
         if line == "1\n":
             player2_points += 1
 
         if gameConcluded(player1_points, player2_points):
-            print("game")
             if player1_points > player2_points:
                 player1_games_for_set += 1
             else:
@@ -88,12 +84,9 @@ def ProcessTournament(fh: typing.TextIO) -> Match:
             player2_points = 0
 
             if player1_games_for_set == GAMES_TO_WIN_SET or player2_games_for_set == GAMES_TO_WIN_SET:
-                print("set")
                 if player1_games_for_set > player2_games_for_set:
-                    print("a")
                     match.player1_sets += 1
                 else:
-                    print("b")
                     match.player2_sets += 1
 
                 updatePlayerTotalGames(match.player1_name, player1_games_for_set,
@@ -101,10 +94,8 @@ def ProcessTournament(fh: typing.TextIO) -> Match:
 
                 player1_games_for_set = 0
                 player2_games_for_set = 0
-                print(f"x\n{match}\nx")
 
                 if matchConcluded(match.player1_sets, match.player2_sets):
-                    print('end of match')
                     tournament.matches[match.id_] = match
 
                     match = None
