@@ -25,26 +25,21 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Setup a virtual environment
-        run: |
-          sudo apt-get update
-          sudo apt-get install python3-venv
-          python3 -m venv venv
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
 
       - name: Install dependencies
-        if: success()
         run: |
-          source ./venv/bin/activate
+          python -m pip install --upgrade pip
           pip install .[test]
 
       - name: Lint
         if: success()
         run: |
-          source ./venv/bin/activate
           flake8 scorer/ --max-line-length=127
 
       - name: Unit test with Pytest
         if: success()
         run: |
-          source ./venv/bin/activate
           py.test -vv
