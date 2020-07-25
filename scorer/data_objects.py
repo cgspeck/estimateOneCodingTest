@@ -5,13 +5,14 @@ from dataclasses import dataclass, field
 @dataclass
 class Match():
     id_: str = None
-    player1_name: str = None
-    player1_sets: int = 0
-    player2_name: str = None
-    player2_sets: int = 0
+    player_names: typing.List[str] = field(default_factory=lambda: [0, 0])
+    player_sets: typing.List[int] = field(default_factory=lambda: [0, 0])
 
     def report(self):
-        return f"{self.player1_name} defeated {self.player2_name}\n{self.player1_sets} sets to {self.player2_sets}"
+        winning_player = self.player_sets[1] > self.player_sets[0]
+        loosing_player = not winning_player
+
+        return f"{self.player_names[winning_player]} defeated {self.player_names[loosing_player]}\n{self.player_sets[winning_player]} sets to {self.player_sets[loosing_player]}"
 
 
 @dataclass

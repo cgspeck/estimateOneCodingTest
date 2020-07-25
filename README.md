@@ -19,7 +19,7 @@ pip install -e .[dev]
 Run the tests:
 
 ```
-py.test
+./test
 ```
 
 ## Using the Processor
@@ -27,7 +27,7 @@ py.test
 Run the tournament scorer like so:
 
 ```
-scorer test/data/full_tournament.txt << EOF
+scorer tests/data/full_tournament.txt << EOF
 Score Match 02
 Games Player Person A
 EOF

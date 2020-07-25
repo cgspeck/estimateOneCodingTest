@@ -1,1 +1,2 @@
+pytest-clarity==0.3.0a0
 -r requirements-test.txt

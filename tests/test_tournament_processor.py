@@ -13,12 +13,13 @@ def test_full_tournament():
 
     expected_tournament = Tournament(
         matches={
-            '01': Match(id_='01', player1_name='Person A', player1_sets=2, player2_name='Person B', player2_sets=0),
-            '02': Match(id_='02', player1_name='Person A', player1_sets=1, player2_name='Person C', player2_sets=2)
+            '01': Match(id_='01', player_names=['Person A', 'Person B'], player_sets=[2, 0]),
+            '02': Match(id_='02', player_names=['Person A', 'Person C'], player_sets=[1, 2])
         },
         players={
             'Person A': Player(name='Person A', won_games=23, lost_games=17),
-            'Person B': Player(name='Person B', won_games=0, lost_games=12), 'Person C': Player(name='Person C', won_games=17, lost_games=11)
+            'Person B': Player(name='Person B', won_games=0, lost_games=12),
+            'Person C': Player(name='Person C', won_games=17, lost_games=11)
         }
     )
     with open(fp, "rt") as fh:
