@@ -1,4 +1,4 @@
 #! /bin/bash
 set -eo pipefail
-pytest -vv
+pytest -vv --cov=scorer
 flake8 scorer/ --max-line-length=127

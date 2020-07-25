@@ -42,4 +42,4 @@ jobs:
       - name: Unit test with Pytest
         if: success()
         run: |
-          py.test -vv
+          py.test -vv --cov=scorer

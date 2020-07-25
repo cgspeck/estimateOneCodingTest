@@ -42,7 +42,28 @@ Games Player Person A
 EOF
 ```
 
-If you run this without any queries then it will print out the results and statistics for each match and player.
+And you will have the following output:
+
+```
+Person C defeated Person A
+2 sets to 1
+
+23 17
+```
+
+There is a debug option which will print out the results and statistics for each match and player like this:
+
+```
+$ scorer tests/data/full_tournament.txt --debug
+Person A defeated Person B
+2 sets to 0
+Person C defeated Person A
+2 sets to 1
+
+Person A stats: 23 17
+Person B stats: 0 12
+Person C stats: 17 11
+```
 
 Note: if you do not want to install developer and test dependencies, running `pip install .` will skip these.
 
