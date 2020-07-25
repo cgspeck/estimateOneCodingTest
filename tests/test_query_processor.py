@@ -21,8 +21,6 @@ def test_process_query():
     queries = io.StringIO("Score Match 02\nGames Player Person A\n")
     assert process_queries(queries, tournament) == expected
 
-    assert True
-
 
 def test_process_query_blank_line_option():
     tournament = Tournament(
@@ -40,5 +38,3 @@ def test_process_query_blank_line_option():
     expected = ['Person C defeated Person A\n2 sets to 1', '', '23 17', '']
     queries = io.StringIO("Score Match 02\nGames Player Person A\n")
     assert process_queries(queries, tournament, blank_line=True) == expected
-
-    assert True
