@@ -13,8 +13,8 @@ def test_full_tournament():
 
     expected_tournament = Tournament(
         matches={
-            '01': Match(id_='01', player1_name='Person A', player1_sets=2, player1_games=0, player2_name='Person B', player2_sets=0, player2_games=0),
-            '02': Match(id_='02', player1_name='Person A', player1_sets=1, player1_games=0, player2_name='Person C', player2_sets=2, player2_games=0)
+            '01': Match(id_='01', player1_name='Person A', player1_sets=2, player2_name='Person B', player2_sets=0),
+            '02': Match(id_='02', player1_name='Person A', player1_sets=1, player2_name='Person C', player2_sets=2)
         },
         players={
             'Person A': Player(name='Person A', won_games=23, lost_games=17),
