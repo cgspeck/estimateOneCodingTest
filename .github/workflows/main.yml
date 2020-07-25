@@ -27,6 +27,7 @@ jobs:
 
       - name: Setup a virtual environment
         run: |
+          apt-get install python3-venv
           python3 -m venv venv
 
       - name: Install dependencies
