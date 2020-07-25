@@ -1,7 +1,7 @@
 import typing
 import io
 
-from data_objects import Match, Player, Tournament
+from .data_objects import Match, Player, Tournament
 
 MATCH_ID_PREAMBLE = 'Match: '
 MINIMUM_POINTS_TO_WIN_GAME = 4

@@ -1,9 +1,12 @@
+import sys
 from pprint import pprint
-import tournament_processor
 
-i = 0
+from . import tournament_processor
 
-with open("./data/full_tournament.txt", "rt") as fh:
-    res = tournament_processor.ProcessTournament(fh)
-    pprint(res.matches)
-    pprint(res.players)
+
+def run_cli():
+    fp = sys.argv[1]
+    with open(fp, "rt") as fh:
+        res = tournament_processor.ProcessTournament(fh)
+        pprint(res.matches)
+        pprint(res.players)
