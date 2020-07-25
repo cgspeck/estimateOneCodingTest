@@ -31,9 +31,11 @@ jobs:
           pip install .[test]
 
       - name: Lint
+        if: success()
         run: |
           flake8 scorer/ --max-line-length=127
 
       - name: Unit test with Pytest
+        if: success()
         run: |
           py.test -vv

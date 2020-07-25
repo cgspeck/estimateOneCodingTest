@@ -35,6 +35,6 @@ setup(
     setup_requires=['wheel'],
     extras_require={
         'dev': required_dev,
-        'tests': required_test
+        'test': required_test
     }
 )
