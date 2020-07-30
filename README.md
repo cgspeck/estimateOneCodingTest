@@ -81,8 +81,6 @@ You can use the included Dockerfile to build an image with the processor preinst
 
 ## CI
 
-This code is hosted in a private [Github repository](https://github.com/cgspeck/estimateOne) and there is a Github Actions-based CI workflow setup that runs on every push.
+This code is hosted in a [Github repository](https://github.com/cgspeck/estimateOne) and there is a Github Actions-based CI workflow setup that runs on every push.
 
 You can view the workflow definition [here](.github/workflows/main.yml).
-
-I would be happy to grant access to this repository to you on request.
